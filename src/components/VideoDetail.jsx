@@ -25,15 +25,15 @@ const VideoDetail = () => {
   const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
   return (
-    <Box minHeight="95vh">
+    <Box minHeight="90vh">
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+          <Box sx={{ width: "100%", position: "sticky", top: "80px" }}>
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls />
             <Typography color="#000" variant="h5" fontWeight="bold" p={2}>
               {title}
             </Typography>
-            <Stack direction="row" justifyContent="space-between" sx={{ color: "#000" }} py={1} px={2} >
+            <Stack direction="row" justifyContent="space-between" sx={{ color: "#000" }}  px={2} >
               <Link to={`/channel/${channelId}`}>
                 <Typography variant={{ sm: "subtitle1", md: 'h6' }}  color="#000" >
                   {channelTitle}
@@ -41,10 +41,10 @@ const VideoDetail = () => {
                 </Typography>
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                <Typography variant="body1">
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                <Typography variant="body1">
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>

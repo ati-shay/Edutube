@@ -15,7 +15,7 @@ const ChannelDetail = () => {
     const fetchResults = async () => {
       const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
 
-      setChannelDetail(data?.items['']);
+      setChannelDetail(data?.items[0]);
 
       const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
 
@@ -24,6 +24,9 @@ const ChannelDetail = () => {
 
     fetchResults();
   }, [id]);
+
+  console.log(channelDetail);
+  console.log(videos);
 
   return (
     <Box minHeight="95vh" style={{dispaly:'flex', alignItems:'center', justifyContent:'center'}}>

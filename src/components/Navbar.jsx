@@ -23,9 +23,10 @@ const Navbar = () => (
       <Box
         style={{
           color: "white",
-          marginLeft: "5px",
+          marginLeft: "3px",
+          marginRight: "3px",
           fontWeight: "bold",
-          fontSize: "28px",
+          fontSize: "20px",
           fontFamily: "cursive",
         }}
       >
